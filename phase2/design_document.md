@@ -261,10 +261,18 @@ Our program is less likely to be used by users who prefer the use of an input de
   * Implementing one-by-one course generation. This improves functionality of the program since the user can choose course sections while Schedules are being generated. This minimizes the user having to scroll through all possibiliies at the end of generation.
 
 #### Baker
-* Worked On:
-  * Refactoring and bug fixing the `Section` and `CourseCreator`
-  * Implementing the `TimeSlot` class
-  * General bug fixes
-* To Work On
-  * Improving runtime for `Scheduler`
-  * Adding RateMyProfessor functionality web scraping to prioritize sections taught by highly-graded profs
+ * Phase 1 Major Contribution [PR](https://github.com/CSC207-UofT/course-project-tut0201-007/pull/23):
+  * Refactoring code base to properly store Section information
+  * Implementing the Timeslot class and its functions such as conflictWith
+  * Fixing code in the CourseCreator to be more readable and to use the new Section / Timeslot implementations
+* Phase 2 Major Contribution [PR](https://github.com/CSC207-UofT/course-project-tut0201-007/pull/71), [PR](https://github.com/CSC207-UofT/course-project-tut0201-007/pull/83):
+  * Adding RateMyProfessor functionality web scraping / qraphql querying
+  * Implemented ProfessorRatingFilter that ensures all courses in a schedule are of a certain quality
+  * Prioritize sections taught by highly-graded profs
+  * User is easily able to query this info directly in the CLI
+  * Fixed bug with the conflictWith function in Timeslot
+* Other contributions:
+  * Building the original CLI during phase 0
+  * Implementing Factory design pattern in the CourseCreator class
+  * Improved Test coverage of workers, including JSON files to test the RateMyProfessor worker
+
